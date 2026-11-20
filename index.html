@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kartik Nagani</title>
+<meta name="description" content="Kartik Nagani. AI engineer and GTM engineer. Pick the side you came for.">
+<meta property="og:title" content="Kartik Nagani">
+<meta property="og:description" content="I build AI systems and I run outbound. Pick the side you came for.">
+<meta property="og:url" content="https://kartiknagani.in">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='16' height='32' fill='%2313202C'/><rect x='16' width='16' height='32' fill='%2310342A'/></svg>">
+<style>
+@font-face{font-family:"Archivo";src:url(/assets/fonts/archivo.woff2) format("woff2-variations");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Bricolage";src:url(/assets/fonts/bricolage.woff2) format("woff2-variations");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;-webkit-font-smoothing:antialiased}
+a.side{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(28px,5vw,72px);text-decoration:none;min-height:100svh;overflow:hidden;transition:flex-grow .5s}
+.ai{background:#DCE2E5;color:#13202C;font-family:"Archivo",sans-serif}
+.gtm{background:#E7EEE6;color:#10342A;font-family:"Bricolage",sans-serif;border-left:1.5px solid #10342A}
+.who{position:absolute;top:clamp(28px,5vw,64px);left:clamp(28px,5vw,72px);font-size:15px;opacity:.75}
+h2{font-size:clamp(2.6rem,6vw,5.6rem);line-height:.95;letter-spacing:-.03em;transition:transform .5s cubic-bezier(.2,.7,.1,1)}
+.ai h2{font-stretch:125%;font-weight:780}
+.gtm h2{font-stretch:92%;font-weight:780;letter-spacing:-.02em}
+p{margin-top:18px;font-size:clamp(1rem,1.3vw,1.15rem);max-width:28em;line-height:1.5}
+.go{display:inline-block;margin-top:28px;padding:13px 22px;border-radius:999px;font-weight:650;font-size:16px;align-self:flex-start}
+.ai .go{background:#13202C;color:#DCE2E5}
+.gtm .go{background:#10342A;color:#E7EEE6}
+.side:hover h2{transform:translateY(-8px)}
+.side:hover .go{text-decoration:underline;text-underline-offset:3px}
+.side:focus-visible{outline:3px solid #2747D6;outline-offset:-6px}
+.mark{position:absolute;top:50%;left:50%;transform:translate(-50%,-62%);width:min(60%,420px);opacity:.9;pointer-events:none}
+header{position:fixed;inset:0 0 auto 0;text-align:center;padding-top:clamp(28px,5vw,64px);z-index:2;pointer-events:none;font-family:"Archivo",sans-serif;font-weight:800;font-stretch:115%;font-size:15px;color:#13202C}
+@media (prefers-reduced-motion:reduce){h2{transition:none}}
+@media (max-width:760px){
+  body{grid-template-columns:1fr}
+  a.side{min-height:50svh;padding-top:90px}
+  .gtm{border-left:0;border-top:1.5px solid #10342A}
+  .mark{width:44%;transform:translate(-50%,-80%);top:42%;left:auto;right:-6%}
+  header{position:absolute}
+}
+</style>
+</head>
+<body>
+<header>Kartik Nagani</header>
+<a class="side ai" href="/ai">
+  <svg class="mark" viewBox="0 0 200 120" aria-hidden="true" fill="none" stroke="#2747D6" stroke-width="1">
+    <path d="M10 20 C60 30 70 100 100 100 S150 40 190 25" opacity=".9"/>
+    <path d="M10 35 C60 45 75 105 100 105 S145 55 190 40" opacity=".6"/>
+    <path d="M10 50 C55 60 80 110 100 110 S140 70 190 55" opacity=".35"/>
+    <circle cx="100" cy="100" r="5" fill="#E2A23B" stroke="none"/>
+  </svg>
+  <h2>AI engineer</h2>
+  <p>I fine-tune models, build RAG apps, write evals and ship LLM systems on AWS.</p>
+  <span class="go">See my AI work</span>
+</a>
+<a class="side gtm" href="/gtm">
+  <svg class="mark" viewBox="0 0 200 120" aria-hidden="true" fill="none" stroke-width="1.4">
+    <path d="M20 100 Q100 -10 180 60" stroke="#C8372D"/>
+    <path d="M20 100 Q90 10 160 90" stroke="#1E7B45"/>
+    <path d="M20 100 Q110 20 190 95" stroke="#24418F"/>
+    <circle cx="20" cy="100" r="5" fill="#C8372D" stroke="none"/>
+  </svg>
+  <h2>GTM engineer</h2>
+  <p>I build lead lists, write cold emails and run outbound that gets replies.</p>
+  <span class="go">See my GTM work</span>
+</a>
+</body>
+</html>

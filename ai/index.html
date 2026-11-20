@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kartik Nagani · AI Engineer</title>
+<meta name="description" content="Kartik Nagani is an AI engineer who fine-tunes models, builds RAG apps, writes evals and ships LLM systems on AWS.">
+<meta property="og:title" content="Kartik Nagani, AI Engineer">
+<meta property="og:description" content="I build LLM systems and test them until they hold up.">
+<meta property="og:url" content="https://kartiknagani.in/ai">
+<meta name="theme-color" content="#DCE2E5">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2313202C'/><circle cx='16' cy='19' r='5' fill='%23E2A23B'/></svg>">
+<link rel="preload" href="/assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Archivo";src:url(/assets/fonts/archivo.woff2) format("woff2-variations");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{
+  --fog:#DCE2E5; --paper:#EEF1F2; --ink:#13202C; --slate:#56677A; --line:#B9C4CB;
+  --cobalt:#2747D6; --amber:#E2A23B;
+  --wide:125%; --pad:clamp(20px,4vw,56px); --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--fog);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:17px;line-height:1.55;font-stretch:100%;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:10;transition:background .3s,box-shadow .3s}
+.nav.scrolled{background:rgba(220,226,229,.88);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.brand{font-weight:800;font-stretch:var(--wide);text-decoration:none;font-size:15px;letter-spacing:-.01em}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--slate)}
+.nav ul a:hover{color:var(--ink)}
+.switch{font-size:14px;text-decoration:none;padding:8px 14px;border:1.5px solid var(--ink);border-radius:999px;white-space:nowrap}
+.switch:hover{background:var(--ink);color:var(--fog)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+#surface{position:absolute;top:0;right:-4vw;width:64vw;height:100%;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 88%,transparent),linear-gradient(180deg,transparent 0,#000 18%,#000 82%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 88%,transparent),linear-gradient(180deg,transparent 0,#000 18%,#000 82%,transparent);mask-composite:intersect}
+.hero .wrap{position:relative;width:100%;pointer-events:none}
+.hero .copy{max-width:720px;pointer-events:auto;padding:110px 0 80px}
+h1{font-stretch:var(--wide);font-weight:780;font-size:clamp(2.1rem,4.5vw,4.3rem);line-height:1;letter-spacing:-.03em}
+h1 .ln{display:block;overflow:hidden}
+h1 .ln span{display:block;white-space:nowrap;transform:translateY(105%);animation:rise .9s cubic-bezier(.2,.7,.1,1) forwards}
+h1 .ln:nth-child(2) span{animation-delay:.08s}
+h1 .ln:nth-child(3) span{animation-delay:.16s}
+h1 .ln:nth-child(4) span{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+.lede{margin-top:28px;font-size:clamp(1.05rem,1.4vw,1.2rem);max-width:34em;color:#2B3A48;opacity:0;animation:fade .8s .5s forwards}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;opacity:0;animation:fade .8s .65s forwards}
+@keyframes fade{to{opacity:1}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.solid{background:var(--ink);color:var(--fog)}
+.btn.solid:hover{background:var(--cobalt)}
+.btn.ghost{border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--paper)}
+.caption{position:absolute;right:var(--pad);bottom:44px;max-width:290px;font-size:13px;color:var(--slate);line-height:1.45;opacity:0;animation:fade .8s 1.2s forwards}
+.caption i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--amber);margin-right:4px;font-style:normal;vertical-align:1px}
+
+@media (prefers-reduced-motion:reduce){
+  h1 .ln span{animation:none;transform:none}
+  .lede,.ctas,.caption{animation:none;opacity:1}
+}
+
+/* sections */
+section{padding:clamp(80px,11vw,140px) 0}
+h2{font-stretch:var(--wide);font-weight:760;font-size:clamp(2rem,3.8vw,3.2rem);line-height:1.02;letter-spacing:-.025em;max-width:16ch}
+.intro{margin-top:18px;color:var(--slate);max-width:38em}
+
+/* projects */
+#projects{background:var(--paper)}
+.project{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,90px);padding:clamp(48px,6vw,72px) 0;border-top:1.5px solid var(--ink)}
+.project:first-of-type{margin-top:56px}
+.project h3{font-stretch:112%;font-weight:720;font-size:clamp(1.4rem,2.2vw,1.85rem);line-height:1.12;letter-spacing:-.015em}
+.project p{margin-top:16px;max-width:36em}
+.stack{margin-top:22px;font-size:14px;color:var(--slate)}
+.facts{list-style:none;margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:22px 28px}
+.facts b{display:block;font-stretch:var(--wide);font-weight:760;font-size:1.65rem;letter-spacing:-.02em;line-height:1.1}
+.facts span{font-size:14px;color:var(--slate)}
+.chart{align-self:start;background:var(--fog);border-radius:18px;padding:28px 28px 24px}
+.chart h4{font-size:15px;font-weight:650}
+.chart small{display:block;color:var(--slate);font-size:13px;margin-top:2px}
+.bars{margin-top:26px;display:grid;gap:18px}
+.bar label{display:flex;justify-content:space-between;font-size:14px;margin-bottom:7px}
+.bar label b{font-stretch:var(--wide);font-weight:760}
+.track{height:34px;background:rgba(19,32,44,.07);border-radius:8px;overflow:hidden}
+.fill{height:100%;width:0;border-radius:8px;background:var(--ink);transition:width 1.4s cubic-bezier(.2,.7,.1,1)}
+.fill.alt{background:var(--slate);opacity:.55}
+.fill.hi{background:var(--cobalt)}
+.chart.on .fill{width:var(--w)}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+.note{margin-top:20px;font-size:13px;color:var(--slate);line-height:1.5}
+
+/* work */
+.jobs{margin-top:56px;list-style:none}
+.job{display:grid;grid-template-columns:200px 1fr;gap:24px 48px;padding:34px 0;border-top:1px solid var(--line)}
+.job:last-child{border-bottom:1px solid var(--line)}
+.when{font-size:14px;color:var(--slate);padding-top:6px}
+.when .now{display:inline-flex;align-items:center;gap:7px;color:var(--ink);font-weight:600}
+.when .now::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(226,162,59,.22)}
+.job h3{font-stretch:112%;font-weight:720;font-size:1.45rem;letter-spacing:-.015em}
+.job h3 span{font-weight:400;font-stretch:100%;color:var(--slate);font-size:1.05rem;letter-spacing:0}
+.job p{margin-top:10px;max-width:40em}
+.job ul{margin:12px 0 0 1.1em;max-width:40em}
+.job li{margin-top:6px}
+
+/* stack */
+#stack{background:var(--ink);color:var(--fog)}
+#stack .intro{color:#9FB0BD}
+.groups{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:44px 48px}
+.groups h3{font-size:15px;font-weight:650;color:var(--amber);margin-bottom:12px}
+.groups p{color:#D2DAE0;font-size:16px;line-height:1.7}
+
+/* contact */
+#contact .wrap{display:grid;grid-template-columns:1.7fr 1fr;gap:48px;align-items:end}
+.mail{display:inline-block;margin-top:30px;font-stretch:var(--wide);font-weight:760;font-size:clamp(1.1rem,2.3vw,1.9rem);letter-spacing:-.02em;text-decoration:none;border-bottom:3px solid var(--cobalt);padding-bottom:4px;overflow-wrap:anywhere}
+.mail:hover{color:var(--cobalt)}
+.links{list-style:none;display:grid;gap:12px;font-size:16px}
+.links a{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+footer{padding:28px 0 40px;font-size:14px;color:var(--slate);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  #surface{right:-30vw;width:130vw;top:auto;bottom:0;height:62%;opacity:.9}
+  .hero{align-items:flex-start}
+  .hero .copy{padding:104px 0 52vh}
+  .caption{left:var(--pad);right:auto;bottom:20px}
+  .project,#contact .wrap{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:6px}
+  .groups{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  h1{font-size:8.5vw}
+  .groups{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .switch{font-size:13px;padding:7px 12px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="/ai">Kartik Nagani</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="switch" href="/gtm">See my GTM work</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="Intro">
+  <canvas id="surface" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="copy">
+      <h1><span class="ln"><span>I build LLM</span></span><span class="ln"><span>systems and test</span></span><span class="ln"><span>them until they</span></span><span class="ln"><span>hold up.</span></span></h1>
+      <p class="lede">I'm Kartik, a Python AI and backend developer at Amberflux EdgeAI. I fine-tune small models, build RAG apps, write the evals that show where they break, and ship them on AWS.</p>
+      <div class="ctas">
+        <a class="btn solid" href="mailto:kartiknagani17@gmail.com">Email me</a>
+        <a class="btn ghost" href="/ai/Kartik_Nagani_AI_Engineer_Resume.pdf" download>Download resume</a>
+      </div>
+    </div>
+  </div>
+  <p class="caption"><i></i> That's a loss surface. The orange dot is gradient descent rolling down to the lowest point it can find. Move your mouse to tilt it.</p>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Things I've built</h2>
+    <p class="intro">Two projects where I wanted a real answer, so I measured everything.</p>
+
+    <article class="project">
+      <div>
+        <h3>Invoice extraction with a small fine-tuned model</h3>
+        <p>Can a 3B open-source model read invoices almost as well as GPT-4o mini, for less money? I fine-tuned one with QLoRA on 800 examples I generated, cleaned and labelled myself. Then I tested both models on 100 invoices neither had seen.</p>
+        <ul class="facts">
+          <li><b>650 ms</b><span>median response time</span></li>
+          <li><b>2x cheaper</b><span>per 1,000 invoices than the API</span></li>
+        </ul>
+        <p>It runs on vLLM inside Docker on an AWS GPU instance. The weights are public on Hugging Face.</p>
+        <p class="stack">Python, Unsloth, Hugging Face TRL, QLoRA, Pydantic, vLLM, Docker, AWS EC2 and S3</p>
+      </div>
+      <figure class="chart" data-chart>
+        <h4>Field-level accuracy</h4>
+        <small>100 held-out invoices</small>
+        <div class="bars">
+          <div class="bar"><label>My fine-tuned 3B model <b>87%</b></label><div class="track"><div class="fill hi" style="--w:87%"></div></div></div>
+          <div class="bar"><label>GPT-4o mini <b>91%</b></label><div class="track"><div class="fill alt" style="--w:91%"></div></div></div>
+        </div>
+        <figcaption class="note">Four points behind a frontier model, at half the cost, on a model I can run myself.</figcaption>
+      </figure>
+    </article>
+
+    <article class="project">
+      <div>
+        <h3>A test harness that catches RAG apps making things up</h3>
+        <p>RAG apps invent answers, and you usually find out from a user. I built a document Q&amp;A app and a harness that scores it on 100 questions with known answers. Did it find the right passage? Did it stick to it? Did it cite it properly?</p>
+        <ul class="facts">
+          <li><b>12</b><span>experiments on chunking, hybrid search and reranking</span></li>
+          <li><b>20% fewer</b><span>made-up answers</span></li>
+        </ul>
+        <p>It's wired into CI. Any pull request that makes the scores drop gets blocked, and a dashboard tracks latency and cost per query.</p>
+        <p class="stack">Python, FastAPI, Ragas, promptfoo, Qdrant, Docker, GitHub Actions, AWS EC2 and ECR</p>
+      </div>
+      <figure class="chart" data-chart>
+        <h4>Answer faithfulness</h4>
+        <small>How often the answer sticks to the source</small>
+        <div class="bars">
+          <div class="bar"><label>First version <b>76%</b></label><div class="track"><div class="fill alt" style="--w:76%"></div></div></div>
+          <div class="bar"><label>After 12 experiments <b>84%</b></label><div class="track"><div class="fill hi" style="--w:84%"></div></div></div>
+        </div>
+        <figcaption class="note">Same model, same documents. The gain came from better retrieval.</figcaption>
+      </figure>
+    </article>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Where I've worked</h2>
+    <ol class="jobs" reversed>
+      <li class="job">
+        <div class="when"><span class="now">Now</span><br>Since Aug 2026</div>
+        <div>
+          <h3>Amberflux EdgeAI <span>Python AI &amp; backend developer</span></h3>
+          <p>I'm building a registry of AI agents. It finds agents, runs them, tests them and rates them, so people can pick the ones that actually work.</p>
+          <ul>
+            <li>Built Amberrig. It runs agents in a sandbox against fixed test cases, and an LLM judge scores every answer.</li>
+            <li>Built an HTTP evaluator that puts live, deployed agents through the same tests using their own endpoints.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <div class="when">Jun 2025 – Dec 2025</div>
+        <div>
+          <h3>Truestate <span>PropTech intern</span></h3>
+          <p>Secondary property sales at a fast-moving startup. I handled inbound leads, worked with clients, did market research and kept the sales pipeline up to date.</p>
+        </div>
+      </li>
+      <li class="job">
+        <div class="when">Jan 2025 – Jun 2025</div>
+        <div>
+          <h3>Pixel Elevate <span>Founder</span></h3>
+          <p>My own company, selling software to local businesses. I built it, sold it, set it up and supported it.</p>
+          <ul>
+            <li>A Google review tool that asks customers for reviews by SMS and voicemail, with no manual work.</li>
+            <li>A missed-call text-back system that replies to every missed call the moment it happens.</li>
+            <li>Websites with local SEO that ranked at the top of Google Maps.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <h2>What I work with</h2>
+    <p class="intro">The tools I reach for most. I pick up new ones fast when the job needs it.</p>
+    <div class="groups">
+      <div><h3>Models and LLMs</h3><p>Hugging Face Transformers and TRL, Unsloth, QLoRA, vLLM, LangChain, OpenAI, Gemini and Groq APIs, prompt engineering</p></div>
+      <div><h3>Evals and RAG</h3><p>Ragas, promptfoo, LLM-as-judge, golden datasets, Qdrant, ChromaDB, hybrid search, reranking</p></div>
+      <div><h3>Backend</h3><p>Python, FastAPI, Django, Pydantic, REST APIs, Pandas, NumPy, scikit-learn</p></div>
+      <div><h3>Cloud and deployment</h3><p>AWS (EC2, S3, ECR, IAM, CloudWatch, Lambda), Docker, GitHub Actions, Vercel</p></div>
+      <div><h3>Data</h3><p>MongoDB, Supabase and PostgreSQL, Git and GitHub</p></div>
+      <div><h3>Automation</h3><p>n8n, webhooks, event-driven SMS and voice workflows, Clay, Apollo</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Have a role where this fits?</h2>
+      <p class="intro">I'm finishing my B.Tech in 2026 and looking for AI engineering work. The fastest way to reach me is email.</p>
+      <a class="mail" href="mailto:kartiknagani17@gmail.com">kartiknagani17@gmail.com</a>
+    </div>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/kartik-nagani-a908b21b9/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="/ai/Kartik_Nagani_AI_Engineer_Resume.pdf" download>Resume (PDF)</a></li>
+      <li><a href="/gtm">My GTM and outbound work</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>Kartik Nagani</span><span>Based in India. Open to remote.</span></div></footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.35});
+  document.querySelectorAll('[data-chart]').forEach(c=>io.observe(c));
+</script>
+<script type="module">
+import * as THREE from '/assets/three.module.min.js';
+const canvas=document.getElementById('surface');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let renderer;
+try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});}catch(e){canvas.remove();}
+if(renderer){
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(38,1,.1,100);
+
+// loss function: a few wells plus gentle ripples
+const wells=[[1.4,-0.6,1.25,1.2],[-1.6,1.1,.75,.9],[-0.4,-2.0,.6,.7],[2.2,1.9,.5,.8]];
+function f(x,z){
+  let h=.055*(x*x+z*z);
+  for(const [a,b,d,s] of wells) h-=d*Math.exp(-((x-a)**2+(z-b)**2)/(2*s*s));
+  h+=.09*Math.sin(x*1.7)*Math.cos(z*1.4);
+  return h;
+}
+function grad(x,z){const e=1e-3;return [(f(x+e,z)-f(x-e,z))/(2*e),(f(x,z+e)-f(x,z-e))/(2*e)];}
+
+const N=64, S=4;
+const ink=new THREE.Color('#13202C'), cob=new THREE.Color('#2747D6'), lt=new THREE.Color('#8FA0AE');
+const positions=[], colors=[], base=[];
+function push(x,z){const y=f(x,z);positions.push(x,y,z);base.push(y);
+  const t=THREE.MathUtils.clamp((y+1.1)/1.6,0,1);
+  const c=cob.clone().lerp(t>.5?lt:ink,Math.abs(t-.35)*1.4);colors.push(c.r,c.g,c.b);}
+for(let i=0;i<=N;i++){const a=-S+2*S*i/N;
+  for(let j=0;j<N;j++){const b0=-S+2*S*j/N,b1=-S+2*S*(j+1)/N;push(a,b0);push(a,b1);push(b0,a);push(b1,a);}}
+const geo=new THREE.BufferGeometry();
+const posAttr=new THREE.Float32BufferAttribute(positions,3);
+geo.setAttribute('position',posAttr);
+geo.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));
+const mat=new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.75});
+const mesh=new THREE.LineSegments(geo,mat);
+scene.add(mesh);
+
+// ball + trail
+const ball=new THREE.Mesh(new THREE.SphereGeometry(.12,32,16),new THREE.MeshBasicMaterial({color:'#E2A23B'}));
+const halo=new THREE.Mesh(new THREE.SphereGeometry(.24,32,16),new THREE.MeshBasicMaterial({color:'#E2A23B',transparent:true,opacity:.18,depthWrite:false}));
+ball.add(halo);scene.add(ball);
+const MAXT=400;const trailPos=new Float32Array(MAXT*3);
+const trailGeo=new THREE.BufferGeometry();trailGeo.setAttribute('position',new THREE.BufferAttribute(trailPos,3));
+const trail=new THREE.Line(trailGeo,new THREE.LineBasicMaterial({color:'#E2A23B',transparent:true,opacity:.9}));
+scene.add(trail);
+let p,v,tn,rest;
+function reset(){const a=Math.random()*Math.PI*2,r=2.6+Math.random()*.9;p=[Math.cos(a)*r,Math.sin(a)*r];v=[0,0];tn=0;rest=0;trailGeo.setDrawRange(0,0);}
+reset();
+
+let mx=0,my=0,tx=0,ty=0;
+addEventListener('pointermove',e=>{tx=(e.clientX/innerWidth-.5);ty=(e.clientY/innerHeight-.5);},{passive:true});
+
+function size(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+new ResizeObserver(size).observe(canvas);size();
+
+let visible=true;
+new IntersectionObserver(([e])=>visible=e.isIntersecting).observe(canvas);
+const t0=performance.now();
+function frame(now){
+  requestAnimationFrame(frame);
+  if(!visible) return;
+  const t=(now-t0)/1000;
+  // intro: surface rises from flat
+  const k=reduce?1:Math.min(1,t/1.8), e=1-Math.pow(1-k,3);
+  if(k<1||!frame.done){const arr=posAttr.array;for(let i=0;i<base.length;i++)arr[i*3+1]=base[i]*e;posAttr.needsUpdate=true;if(k>=1)frame.done=true;}
+  // descent with momentum
+  if(t>1.4){
+    if(rest>0){rest-=1/60;if(rest<=0)reset();}
+    else{
+      const g=grad(p[0],p[1]);v[0]=.92*v[0]-.018*g[0];v[1]=.92*v[1]-.018*g[1];p[0]+=v[0];p[1]+=v[1];
+      if(tn<MAXT){trailPos.set([p[0],f(p[0],p[1])+.03,p[1]],tn*3);tn++;trailGeo.setDrawRange(0,tn);trailGeo.attributes.position.needsUpdate=true;}
+      if(Math.hypot(v[0],v[1])<4e-4&&tn>40) rest=2.2;
+      if(tn>=MAXT) rest=1.5;
+    }
+  }
+  ball.position.set(p[0],f(p[0],p[1])*e+.1,p[1]);
+  halo.scale.setScalar(1+.25*Math.sin(t*3));
+  mx+=(tx-mx)*.05;my+=(ty-my)*.05;
+  const ang=(reduce?0:t*.06)+mx*.9+.6;
+  camera.position.set(Math.cos(ang)*11,6.2+my*-2.4,Math.sin(ang)*11);
+  camera.lookAt(0,-.9,0);
+  renderer.render(scene,camera);
+}
+requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>
