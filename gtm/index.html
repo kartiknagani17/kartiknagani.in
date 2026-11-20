@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kartik Nagani · GTM Engineer</title>
-<meta name="description" content="Kartik Nagani is a GTM engineer who runs cold email outbound, builds lead lists, runs Meta ads and does local SEO.">
-<meta property="og:title" content="Kartik Nagani, GTM Engineer">
-<meta property="og:description" content="I find the right people and get them to reply.">
+<title>Kartik Nagani · GTM &amp; Digital Marketing</title>
+<meta name="description" content="Kartik Nagani does GTM and digital marketing: cold email outbound, Meta ads, lead generation and local SEO.">
+<meta property="og:title" content="Kartik Nagani, GTM &amp; Digital Marketing">
+<meta property="og:description" content="Cold email and Meta ads that get the right people to reply, click and book.">
 <meta property="og:url" content="https://kartiknagani.in/gtm">
 <meta name="theme-color" content="#E7EEE6">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2310342A'/><path d='M7 11h18v11H7z' fill='none' stroke='%23E7EEE6' stroke-width='2'/><path d='M7 11l9 7 9-7' fill='none' stroke='%23E7EEE6' stroke-width='2'/></svg>">
@@ -47,7 +47,7 @@ h1 .ln:nth-child(2) span{animation-delay:.08s}
 h1 .ln:nth-child(3) span{animation-delay:.16s}
 @keyframes rise{to{transform:none}}
 .lede{margin-top:28px;font-size:clamp(1.05rem,1.35vw,1.2rem);max-width:31em;opacity:0;animation:fade .8s .5s forwards}
-.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;opacity:0;animation:fade .8s .65s forwards}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;opacity:0;animation:fade .8s .7s forwards}
 @keyframes fade{to{opacity:1}}
 .btn{display:inline-flex;align-items:center;padding:14px 24px;border-radius:999px;font-weight:650;text-decoration:none;font-size:17px;transition:transform .15s,background .2s}
 .btn:active{transform:scale(.97)}
@@ -58,6 +58,13 @@ h1 .ln:nth-child(3) span{animation-delay:.16s}
 .globe-box{position:relative;aspect-ratio:1;width:min(48vw,640px);justify-self:end;margin-right:-2vw}
 #globe{width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
 #globe:active{cursor:grabbing}
+.channels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;max-width:540px;opacity:0;animation:fade .8s .6s forwards}
+.channel{padding:14px 16px 14px 18px;border-left:4px solid var(--red);background:var(--card);border-radius:0 10px 10px 0}
+.channel.paid{border-left-color:var(--blue)}
+.ch-title{font-size:1.05rem;font-weight:750;letter-spacing:-.01em;line-height:1.2;max-width:none;font-stretch:100%}
+.channel p{font-size:14.5px;color:var(--muted);margin-top:4px;line-height:1.4}
+@media (prefers-reduced-motion:reduce){.channels{animation:none;opacity:1}}
+@media (max-width:560px){.channels{grid-template-columns:1fr}}
 .caption{position:absolute;left:10%;bottom:-2%;max-width:300px;font-size:14px;color:var(--muted);line-height:1.45;opacity:0;animation:fade .8s 1.2s forwards}
 .caption i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);margin-right:5px;vertical-align:1px}
 @media (prefers-reduced-motion:reduce){h1 .ln span{animation:none;transform:none}.lede,.ctas,.caption{animation:none;opacity:1}}
@@ -152,8 +159,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <section class="hero" aria-label="Intro">
   <div class="wrap">
     <div class="copy">
-      <h1><span class="ln"><span>I find the right</span></span><span class="ln"><span>people and get</span></span><span class="ln"><span>them to reply.</span></span></h1>
-      <p class="lede">I'm Kartik, a GTM engineer at Rushin Heavn Media. I build lead lists, write cold emails and run outbound for clients selling into the US. Before that I sold websites to chiropractors and dentists by calling, DMing and emailing them myself.</p>
+      <h1><span class="ln"><span>I get the right</span></span><span class="ln"><span>people to reply,</span></span><span class="ln"><span>click and book.</span></span></h1>
+      <p class="lede">I'm Kartik. I do GTM and digital marketing. Right now I run cold email outbound for US clients at Rushin Heavn Media. Before that I ran my own agency, running Meta ads for chiropractors and selling websites to local businesses.</p>
+      <div class="channels">
+        <div class="channel out"><h2 class="ch-title">Outbound</h2><p>Cold email, lead lists, Instantly, Clay, Apollo</p></div>
+        <div class="channel paid"><h2 class="ch-title">Digital marketing</h2><p>Meta ads on Facebook and Instagram, lead-gen campaigns, local SEO</p></div>
+      </div>
       <div class="ctas">
         <a class="btn solid" href="mailto:kartiknagani17@gmail.com">Email me</a>
         <a class="btn ghost" href="/gtm/Kartik_Nagani_GTM_Resume.pdf" download>Download resume</a>
@@ -161,7 +172,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     </div>
     <div class="globe-box">
       <canvas id="globe" aria-hidden="true"></canvas>
-      <p class="caption"><i></i> Each arc is an email going out from India to an inbox in the US, Canada or the UK. Drag the globe to spin it.</p>
+      <p class="caption"><i></i> Each arc is a campaign going out from India to people in the US, Canada and the UK. Drag the globe to spin it.</p>
     </div>
   </div>
 </section>
@@ -171,11 +182,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <section id="what">
   <div class="wrap">
     <h2>What I do</h2>
-    <p class="intro">Most of my work comes down to one thing: getting a stranger to say "sure, let's talk."</p>
+    <p class="intro">Whether it's an email or an ad, the job is the same: get the right stranger to stop, read and take the next step.</p>
     <div class="skills">
       <div class="skill"><h3>Cold email</h3><p>Lists, copy, sequences and sending, all run in Instantly. I write the emails myself and keep changing them based on who actually replies.</p></div>
-      <div class="skill"><h3>Lead lists</h3><p>I scrape Google Maps for local businesses, then clean and enrich the list with Clay and Apollo, so we only email people worth emailing.</p></div>
-      <div class="skill"><h3>Meta ads</h3><p>Facebook and Instagram lead ads for chiropractors. Who sees the ad, what it says, and following up until the lead books a visit.</p></div>
+      <div class="skill"><h3>Meta ads</h3><p>Facebook and Instagram lead ads for chiropractors. Who sees the ad, what the ad says and shows, and following up until the lead books a visit.</p></div>
+      <div class="skill"><h3>Lead lists</h3><p>I scrape Google Maps for local businesses, then clean and enrich the list with Clay and Apollo, so we only reach people worth reaching.</p></div>
       <div class="skill"><h3>Local SEO</h3><p>I built websites for local businesses and got them ranking at the top of Google Maps in their area, which brought in steady calls without paying for ads.</p></div>
       <div class="skill"><h3>Copywriting</h3><p>Five years of writing words that need a response: cold emails, follow-ups, ads and website copy. Short, plain and about the reader.</p></div>
     </div>
@@ -185,13 +196,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <section id="process">
   <div class="wrap">
     <h2>How a campaign runs</h2>
-    <p class="intro">Same steps every time. The work is in doing each one properly.</p>
+    <p class="intro">Cold email or Meta ads, the steps are the same. The work is in doing each one properly.</p>
     <ol class="steps">
-      <li><h3>Pick the market</h3><p>Who are we going after, where are they, and why would they care?</p></li>
-      <li><h3>Build the list</h3><p>Scrape Google Maps or pull from Apollo, then cut anyone who doesn't fit.</p></li>
-      <li><h3>Enrich it</h3><p>Find the right person, a working email and a real reason to reach out.</p></li>
-      <li><h3>Write and send</h3><p>A short first email and a few follow-ups, sent through Instantly.</p></li>
-      <li><h3>Handle replies</h3><p>Sort the replies, answer interested people fast and hand booked calls to the client.</p></li>
+      <li><h3>Pick the audience</h3><p>Who are we going after, where are they, and why would they care?</p></li>
+      <li><h3>Find them</h3><p>A clean lead list from Google Maps and Apollo, or the right audience in Meta.</p></li>
+      <li><h3>Write the message</h3><p>Cold email copy, or ad copy and creative. Short, plain and about them.</p></li>
+      <li><h3>Launch and test</h3><p>Sequences in Instantly, ads in Meta. Keep what works, cut what doesn't.</p></li>
+      <li><h3>Turn interest into calls</h3><p>Answer replies and follow up leads fast until they book.</p></li>
     </ol>
   </div>
 </section>
@@ -222,11 +233,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <li class="job">
         <div class="when">Jan 2025 – Jun 2025</div>
         <div>
-          <h3>Pixel Elevate<span>Founder, web design and Meta ads agency</span></h3>
+          <h3>Pixel Elevate<span>Founder, Meta ads and web design agency</span></h3>
           <p>My own agency for local businesses. I found every client myself with cold calls, cold DMs and cold email, and handled sales, pricing, delivery and payments.</p>
           <ul>
+            <li>Ran Meta ads on Facebook and Instagram for chiropractors to bring in new patients: targeting, ad copy and creative, and lead follow-up.</li>
             <li>Sold websites on a monthly subscription instead of a big upfront price, so clients stayed on.</li>
-            <li>Ran Meta ads for chiropractors to bring in new patients.</li>
             <li>Built sites with local SEO that ranked at the top of Google Maps.</li>
             <li>Sold a Google review tool and a missed-call text-back system to the same clients.</li>
           </ul>
@@ -244,8 +255,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <div class="envelope">
       <div class="envelope-in">
         <div>
-          <h2>Need more meetings on the calendar?</h2>
-          <p class="intro">Email me and tell me who you're trying to reach. I'll reply, obviously.</p>
+          <h2>Need more leads coming in?</h2>
+          <p class="intro">Email me and tell me who you're trying to reach, by email, ads or both. I'll reply, obviously.</p>
           <a class="mail" href="mailto:kartiknagani17@gmail.com">kartiknagani17@gmail.com</a>
         </div>
         <ul class="links">
