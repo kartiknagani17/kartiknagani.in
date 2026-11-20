@@ -37,6 +37,10 @@ a{color:inherit}
 .switch{font-size:14px;text-decoration:none;padding:8px 14px;border:1.5px solid var(--ink);border-radius:999px;white-space:nowrap}
 .switch:hover{background:var(--ink);color:var(--fog)}
 
+.call{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;text-decoration:none;padding:9px 16px;border-radius:999px;background:var(--ink,var(--forest));color:#fff;white-space:nowrap;transition:background .2s}
+.call:hover{background:var(--cobalt)}
+.call .short{display:none}
+@media (max-width:560px){.call .num{display:none}.call .short{display:inline}}
 /* hero */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
 #surface{position:absolute;top:0;right:-4vw;width:64vw;height:100%;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 88%,transparent),linear-gradient(180deg,transparent 0,#000 18%,#000 82%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 22%,#000 88%,transparent),linear-gradient(180deg,transparent 0,#000 18%,#000 82%,transparent);mask-composite:intersect}
@@ -153,6 +157,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <li><a href="#stack">Stack</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <a class="call" href="tel:+918305753703" aria-label="Call Kartik on +91 83057 53703"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">+91 83057 53703</span><span class="short">Call me</span></a>
   </div>
 </header>
 
