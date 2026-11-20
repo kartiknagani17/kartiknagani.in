@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kartik Nagani · AI Engineer</title>
-<meta name="description" content="Kartik Nagani is an AI engineer who fine-tunes models, builds RAG apps, writes evals and ships LLM systems on AWS.">
+<meta name="description" content="Kartik Nagani is an AI engineer who fine-tunes models, builds RAG apps, writes evals and ships LLM systems on serverless infra.">
 <meta property="og:title" content="Kartik Nagani, AI Engineer">
 <meta property="og:description" content="I build LLM systems and test them until they hold up.">
 <meta property="og:url" content="https://kartiknagani.in/ai">
@@ -167,7 +167,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="wrap">
     <div class="copy">
       <h1><span class="ln"><span>I build LLM</span></span><span class="ln"><span>systems and test</span></span><span class="ln"><span>them until they</span></span><span class="ln"><span>hold up.</span></span></h1>
-      <p class="lede">I'm Kartik, a Python AI and backend developer at Amberflux EdgeAI. I fine-tune small models, build RAG apps, write the evals that show where they break, and ship them on AWS.</p>
+      <p class="lede">I'm Kartik, a Python AI and backend developer at Amberflux EdgeAI. I fine-tune small models, build RAG apps, write the evals that show where they break, and ship them on serverless infra like AWS Lambda and Modal.</p>
       <div class="ctas">
         <a class="btn solid" href="mailto:kartiknagani17@gmail.com">Email me</a>
         <a class="btn ghost" href="/ai/Kartik_Nagani_AI_Engineer_Resume.pdf" download>Download resume</a>
@@ -190,8 +190,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           <li><b>650 ms</b><span>median response time</span></li>
           <li><b>2x cheaper</b><span>per 1,000 invoices than the API</span></li>
         </ul>
-        <p>It runs on vLLM inside Docker on an AWS GPU instance. The weights are public on Hugging Face.</p>
-        <p class="stack">Python, Unsloth, Hugging Face TRL, QLoRA, Pydantic, vLLM, Docker, AWS EC2 and S3</p>
+        <p>It runs on vLLM on Modal's serverless GPUs, which scale to zero when nobody's using it. The weights are public on Hugging Face.</p>
+        <p class="stack">Python, Unsloth, Hugging Face TRL, QLoRA, Pydantic, vLLM, Modal</p>
       </div>
       <figure class="chart" data-chart>
         <h4>Field-level accuracy</h4>
@@ -212,8 +212,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           <li><b>12</b><span>experiments on chunking, hybrid search and reranking</span></li>
           <li><b>20% fewer</b><span>made-up answers</span></li>
         </ul>
-        <p>It's wired into CI. Any pull request that makes the scores drop gets blocked, and a dashboard tracks latency and cost per query.</p>
-        <p class="stack">Python, FastAPI, Ragas, promptfoo, Qdrant, Docker, GitHub Actions, AWS EC2 and ECR</p>
+        <p>It runs on AWS Lambda and deploys through GitHub Actions. Any pull request that makes the scores drop gets blocked, and a CloudWatch dashboard tracks latency and cost per query.</p>
+        <p class="stack">Python, FastAPI, Ragas, promptfoo, Qdrant, Docker, GitHub Actions, AWS Lambda</p>
       </div>
       <figure class="chart" data-chart>
         <h4>Answer faithfulness</h4>
@@ -274,7 +274,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div><h3>Models and LLMs</h3><p>Hugging Face Transformers and TRL, Unsloth, QLoRA, vLLM, LangChain, OpenAI, Gemini and Groq APIs, prompt engineering</p></div>
       <div><h3>Evals and RAG</h3><p>Ragas, promptfoo, LLM-as-judge, golden datasets, Qdrant, ChromaDB, hybrid search, reranking</p></div>
       <div><h3>Backend</h3><p>Python, FastAPI, Django, Pydantic, REST APIs, Pandas, NumPy, scikit-learn</p></div>
-      <div><h3>Cloud and deployment</h3><p>AWS (EC2, S3, ECR, IAM, CloudWatch, Lambda), Docker, GitHub Actions, Vercel</p></div>
+      <div><h3>Cloud and deployment</h3><p>AWS (Lambda, IAM, CloudWatch), Modal serverless GPUs, Hugging Face Hub, Docker, GitHub Actions, Vercel</p></div>
       <div><h3>Data</h3><p>MongoDB, Supabase and PostgreSQL, Git and GitHub</p></div>
       <div><h3>Automation</h3><p>n8n, webhooks, event-driven SMS and voice workflows, Clay, Apollo</p></div>
     </div>
