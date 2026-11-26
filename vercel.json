@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/localio", "destination": "https://localio-one.vercel.app/localio" },
+    { "source": "/localio/:path*", "destination": "https://localio-one.vercel.app/localio/:path*" },
+    { "source": "/resume-match", "destination": "https://resume-match-ten-theta.vercel.app/resume-match" },
+    { "source": "/resume-match/:path*", "destination": "https://resume-match-ten-theta.vercel.app/resume-match/:path*" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
